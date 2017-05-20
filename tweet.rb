@@ -3,7 +3,15 @@ require 'twitter'
 class Tweet
 
   def initialize
-    @text = ["Hello Twitter!","Hello Ruby"]
+    @text = ["Macを使う",
+             "ターミナルは黒背景に緑文字",
+             "USキーボードを使いがち",
+             "Appleの新製品発表美は徹夜",
+             "机まの周りにどんなけお金かけるの？",
+             "土日もプログラミング。もしくは勉強会に参加",
+             "トラブル時は殺すを連呼",
+             "モニターが２個あると生産性が上がる",
+             "帰る直前にトラブル"]
 
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key = "YcHDyWexe6qtKp8oH1l190WO1"
@@ -23,7 +31,7 @@ class Tweet
     begin
       @client.update(tweet)
     rescue => e
-      nil #TODO
+      nil
     end
   end
 end
